@@ -19,7 +19,7 @@
             const pdfUrl = urlParams.get('file');
             console.log('PDF URL:', pdfUrl);
             if (pdfUrl) {
-                var adobeDCView = new AdobeDC.View({clientId: "b347aaef8f54404eb2a32e354a10ebb3", divId: "viewer"});
+                var adobeDCView = new AdobeDC.View({clientId: "d11e7eff05de4947be63c2f8cfaaccd9", divId: "viewer"});
                 console.log('AdobeDC.View initialized:', adobeDCView);
                 console.log('Calling previewFile with parameters:', {
                     content: {location: {url: pdfUrl}},
