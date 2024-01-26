@@ -21,7 +21,10 @@
             if (pdfUrl) {
                 var adobeDCView = new AdobeDC.View({clientId: "b347aaef8f54404eb2a32e354a10ebb3", divId: "viewer"});
                 console.log('AdobeDC.View initialized:', adobeDCView);
-                console.log('Calling previewFile');
+                console.log('Calling previewFile with parameters:', {
+                    content: {location: {url: pdfUrl}},
+                    metaData: {fileName: "Your File Name"}
+                }, {embedMode: "SIZED_CONTAINER"});
                 adobeDCView.previewFile({
                     content: {location: {url: pdfUrl}},
                     metaData: {fileName: "Your File Name"}
