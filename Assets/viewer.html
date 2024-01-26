@@ -14,10 +14,14 @@
     <div id="viewer"></div>
     <script>
         document.getElementById('adobe-dc-view-sdk').addEventListener('load', function () {
+            console.log('SDK loaded');
             const urlParams = new URLSearchParams(window.location.search);
             const pdfUrl = urlParams.get('file');
+            console.log('PDF URL:', pdfUrl);
             if (pdfUrl) {
                 var adobeDCView = new AdobeDC.View({clientId: "b347aaef8f54404eb2a32e354a10ebb3", divId: "viewer"});
+                console.log('AdobeDC.View initialized:', adobeDCView);
+                console.log('Calling previewFile');
                 adobeDCView.previewFile({
                     content: {location: {url: pdfUrl}},
                     metaData: {fileName: "Your File Name"}
