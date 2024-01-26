@@ -2,26 +2,26 @@
 <html>
 <head>
     <style>
-        html, body {
+        html, body, #viewer {
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
     </style>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js" id="adobe-dc-view-sdk"></script>
 </head>
 <body>
-    <iframe id="viewer" src="https://mozilla.github.io/pdf.js/web/viewer.html"></iframe>
+    <div id="viewer"></div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById('adobe-dc-view-sdk').addEventListener('load', function () {
             const urlParams = new URLSearchParams(window.location.search);
             const pdfUrl = urlParams.get('file');
             if (pdfUrl) {
-                document.getElementById('viewer').src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=" + encodeURIComponent(pdfUrl);
+                var adobeDCView = new AdobeDC.View({clientId: "b347aaef8f54404eb2a32e354a10ebb3", divId: "viewer"});
+                adobeDCView.previewFile({
+                    content: {location: {url: pdfUrl}},
+                    metaData: {fileName: "Your File Name"}
+                }, {embedMode: "SIZED_CONTAINER"});
             }
         });
     </script>
