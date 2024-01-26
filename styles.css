@@ -1,0 +1,58 @@
+/* Body Section Starts */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+/* Body Section Ends */
+
+/* Navigation Bar and Control Bar Section Starts */
+.navigation-bar, .control-bar {
+    background-color: #3498db;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+/* Navigation Bar and Control Bar Section Ends */
+
+/* Navigation Bar Button and Control Bar Button Section Starts */
+.navigation-bar button, .control-bar button {
+    background-color: #2980b9;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/* Navigation Bar Button and Control Bar Button Section Ends */
+
+/* Navigation Bar Input Section Starts */
+.navigation-bar input {
+    padding: 10px;
+    font-size: 16px;
+}
+/* Navigation Bar Input Section Ends */
+
+/* Reading Area Section Starts */
+.reading-area {
+    padding: 20px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin: 10px;
+    overflow-y: auto;
+}
+/* Reading Area Section Ends */
+
+/* Book Content Section Starts */
+#book-content {
+    font-size: 18px;
+    line-height: 1.6;
+}
+/* Book Content Section Ends */

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head Section Starts -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BookBreeze</title>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!--  adds the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <!-- Head Section Ends -->
+</head>
+<body>
+    <!-- Body Section Starts -->
+    <!-- Navigation Bar Starts -->
+    <header class="navigation-bar">
+        <button onclick="goToLibrary()">Library</button>
+        <button onclick="adjustSettings()">Settings</button>
+        <input type="text" placeholder="Search" oninput="searchInBook(this.value)">
+    </header>
+    <!-- Navigation Bar Ends -->
+
+    <!-- Reading Area Starts -->
+    <main class="reading-area">
+        <div id="book-content">
+            <!-- eBook content will be displayed here -->
+        </div>
+    </main>
+    <!-- Reading Area Ends -->
+
+
+
+
+    <!-- Control Bar Starts -->
+    <footer class="control-bar">
+        <button onclick="goToPreviousPage()">Previous</button>
+        <button onclick="goToNextPage()">Next</button>
+        <button onclick="adjustFontSize()">Adjust Font Size</button>
+        <button onclick="bookmarkPage()">Bookmark</button>
+    </footer>
+    <!-- Control Bar Ends -->
+
+
+
+    <!-- Include other sections like Library, Metadata Display, etc. -->
+
+    <script src="script.js"></script>
+
+    <!-- Firebase Initialization Starts -->
+    <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+            import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyAlfjG6kS4N0fgFVNnnJ7edDLOdvNvBFrY",
+                authDomain: "bookbreeze11.firebaseapp.com",
+                projectId: "bookbreeze11",
+                storageBucket: "bookbreeze11.appspot.com",
+                messagingSenderId: "664143329195",
+                appId: "1:664143329195:web:82e2b5bf244a84506404ee",
+                measurementId: "G-TSDZ4JQR3G"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+            // Initialize Firestore
+            const db = getFirestore(app);
+    </script>
+    <!-- Firebase Initialization Ends -->
+    <!-- Body Section Ends -->
+</body>
+</html>
