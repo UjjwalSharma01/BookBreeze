@@ -13,7 +13,7 @@
 <body>
     <div id="viewer"></div>
     <script>
-        document.getElementById('adobe-dc-view-sdk').addEventListener('load', function () {
+        function loadSDK() {
             console.log('SDK loaded');
             const urlParams = new URLSearchParams(window.location.search);
             const pdfUrl = urlParams.get('file');
@@ -27,7 +27,14 @@
                     metaData: {fileName: "Your File Name"}
                 }, {embedMode: "SIZED_CONTAINER"});
             }
-        });
+        }
+
+        var sdkScript = document.getElementById('adobe-dc-view-sdk');
+        if (sdkScript.readyState === 'complete') {
+            loadSDK();
+        } else {
+            sdkScript.addEventListener('load', loadSDK);
+        }
     </script>
 </body>
 </html>
