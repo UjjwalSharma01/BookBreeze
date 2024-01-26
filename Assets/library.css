@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#book-list {
+    list-style-type: none;
+    padding: 0;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#book-list li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #book-list {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #book-list {
+        width: 100%;
+    }
+
+    #book-list li {
+        padding: 10px;
+    }
+}
