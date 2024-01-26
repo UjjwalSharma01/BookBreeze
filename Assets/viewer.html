@@ -8,7 +8,7 @@
             padding: 0;
         }
     </style>
-    <script src="https://documentcloud.adobe.com/view-sdk/main.js" id="adobe-dc-view-sdk"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 </head>
 <body>
     <div id="viewer"></div>
@@ -32,12 +32,9 @@
             }
         }
 
-        var sdkScript = document.getElementById('adobe-dc-view-sdk');
-        if (sdkScript.readyState === 'complete') {
+        document.addEventListener("ADOBEDC_VIEW_SDK_READY", function() {
             loadSDK();
-        } else {
-            sdkScript.addEventListener('load', loadSDK);
-        }
+        });
     </script>
 </body>
 </html>
