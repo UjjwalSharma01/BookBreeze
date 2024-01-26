@@ -4,7 +4,13 @@ import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.c
 
 // app's Firebase configuration
 const firebaseConfig = {
-    // Your Firebase configuration
+    apiKey: "AIzaSyAlfjG6kS4N0fgFVNnnJ7edDLOdvNvBFrY",
+    authDomain: "bookbreeze11.firebaseapp.com",
+    projectId: "bookbreeze11",
+    storageBucket: "bookbreeze11.appspot.com",
+    messagingSenderId: "664143329195",
+    appId: "1:664143329195:web:82e2b5bf244a84506404ee",
+    measurementId: "G-TSDZ4JQR3G"
 };
 
 // Initialize Firebase
@@ -31,12 +37,25 @@ getDocs(booksCollection).then((querySnapshot) => {
         // Create a new list item
         const li = document.createElement('li');
 
-        // Create a button to open the PDF
+        // Create a button to open the PDF or EPUB
         const button = document.createElement('button');
         button.textContent = `${book.title} - ${book.author}`;
         button.onclick = function() {
-            // Open the PDF in a new window using PDF.js
-            window.open(`/web/viewer.html?file=${encodeURIComponent(book.url)}`, '_blank');
+            // Remove the query parameters from the URL
+            const urlWithoutQueryParameters = book.url.split('?')[0];
+
+            // Check the file extension
+            const fileExtension = urlWithoutQueryParameters.split('.').pop().toLowerCase();
+
+            if (fileExtension === 'pdf') {
+                // Open the PDF in a new window using PDF.js
+                window.open(`/Assets/viewer.html?file=${encodeURIComponent(book.url)}`, '_blank');
+            } else if (fileExtension === 'epub') {
+                // Open the EPUB in a new window using EPUB.js
+                window.open(`/Assets/epubViewer.html?file=${encodeURIComponent(book.url)}`, '_blank');
+            } else {
+                alert('Unsupported file format');
+            }
         };
 
         // Add the button to the list item

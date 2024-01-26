@@ -16,6 +16,10 @@
     <!-- Add Firebase products use -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+    <!-- Add EPUB.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/epub.js/0.3.88/epub.min.js"></script>
+
     <!-- Head Section Ends -->
 </head>
 <body>
@@ -36,9 +40,6 @@
     </main>
     <!-- Reading Area Ends -->
 
-
-
-
     <!-- Control Bar Starts -->
     <footer class="control-bar">
         <button onclick="goToPreviousPage()">Previous</button>
@@ -47,9 +48,7 @@
         <button onclick="bookmarkPage()">Bookmark</button>
         <input type="file" id="ebook-upload" accept=".epub,.pdf" onchange="uploadEbook(event)">
     </footer>
-    <!-- Control Bar Ends -->>
-
-
+    <!-- Control Bar Ends -->
 
     <!-- Include other sections like Library, Metadata Display, etc. -->
 
